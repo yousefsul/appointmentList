@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.idea/appointmentList.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+
+.idea
+Appointments_Report_03.03_to_03.06.2021.xlsx
+~$Appointments_Report_03.03_to_03.06.2021.xlsx
