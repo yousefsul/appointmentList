@@ -3,6 +3,7 @@ import logging
 import numpy as np
 import pandas as pd
 from appointmentInfo import AppointmentInfo
+from connectMongoDB import ConnectMongoDB
 
 """
 class ReadAppointemntList
@@ -28,6 +29,7 @@ class ReadAppointemntList:
     * replacing not a number fields in the excel sheet with empty string
     * define object from class Appointment as none named appointment_info
     * define appointment as none
+    * define object from class ConntecMongoDB named connection
     """
 
     def __init__(self, appointment_list_file):
@@ -35,12 +37,13 @@ class ReadAppointemntList:
         self.appointment_list_file_dataframe = pd.read_excel(self.appointment_list_file).replace(np.nan, '', regex=True)
         self.appointment_info = None
         self.appointment = None
+        self.connection = ConnectMongoDB()
 
     """
     * read the appointment excel sheet extract the appointment infomartion using the object appointment_info
     """
     def get_appointment_list(self):
-        print("\n")
+        self.connection.connect_to_appointments_collection()
         try:
             for count, row in self.appointment_list_file_dataframe.iloc[::-1].iterrows():
                 appointment_data = self.appointment_list_file_dataframe.loc[count]
@@ -68,6 +71,7 @@ class ReadAppointemntList:
                     "units": self.appointment_info.get_patient_unit(),
                     "total_fee": self.appointment_info.get_patient_total_fee(),
                 }
+                self.connection.insert_to_appointments_collection(self.appointment)
         except ValueError:
             logging.error("get_appointment_list Method      Value Error")
             print("Error from get_appointment_list method", ValueError)

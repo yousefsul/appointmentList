@@ -6,7 +6,7 @@ logging_format = "%(asctime)s =>  %(message)s"
 logging.basicConfig(filename="appintmentList.log", filemode="w", format=logging_format, level=logging.INFO,
                     datefmt="%H:%M:%S")
 
-# ? add paitnets file name
+# ? add paitnets file name 
 EXCEL_FILE_NAME_APPOINTMENTS_LIST = "Appointments_Report_03.03_to_03.06.2021.xlsx"
 
 if __name__ == '__main__':
