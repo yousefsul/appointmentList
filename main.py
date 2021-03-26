@@ -6,15 +6,15 @@ logging_format = "%(asctime)s =>  %(message)s"
 logging.basicConfig(filename="appintmentList.log", filemode="w", format=logging_format, level=logging.INFO,
                     datefmt="%H:%M:%S")
 
-# ? add paitnets file name 
+# add paitnets file name
 EXCEL_FILE_NAME_APPOINTMENTS_LIST = "Appointments_Report_03.03_to_03.06.2021.xlsx"
 
 if __name__ == '__main__':
     """
-    * Main Method
+    Main Method
 
-    * create object from class ReadAppointemntList named read_appointment_list ,send the file name as param.
-    * call method get_get_appointment_list()
+    create object from class ReadAppointemntList named read_appointment_list ,send the file name as param.
+    call method get_get_appointment_list()
 
     @:exception File Maybe not exist
     """

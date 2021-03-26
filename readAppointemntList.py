@@ -11,12 +11,12 @@ class ReadAppointemntList
 Methods:
 
 constructor  --> 
-    @:param  appointments list file 
+    param  appointments list file 
 
     call from --> main method 
 ----------------------------------------------------------
 get_appointment_list
-    @:param no params
+    param no params
 
     call from --> main method 
 ----------------------------------------------------------
@@ -40,7 +40,7 @@ class ReadAppointemntList:
         self.connection = ConnectMongoDB()
 
     """
-    * read the appointment excel sheet extract the appointment infomartion using the object appointment_info
+    read the appointment excel sheet extract the appointment infomartion using the object appointment_info
     """
     def get_appointment_list(self):
         self.connection.connect_to_appointments_collection()

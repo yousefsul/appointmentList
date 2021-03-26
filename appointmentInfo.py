@@ -6,7 +6,7 @@ class Appointment
 Methods:
 
 constructor  -->
-    @:param : appointment info
+    param : appointment info
 
     call from --> get_appointment_list method in ReadAppointemntList class
 ----------------------------------------------------------
@@ -17,10 +17,10 @@ getters
 
 class AppointmentInfo:
     """
-    * read the appointment info
-    * get the paitent name
-    * get the clinician name
-    * get the date and time for the appointment
+    read the appointment info
+    get the paitent name
+    get the clinician name
+    get the date and time for the appointment
     """
     def __init__(self, appointment_info):
         self.appointment_info = appointment_info
