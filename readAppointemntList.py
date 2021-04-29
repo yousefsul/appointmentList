@@ -71,7 +71,8 @@ class ReadAppointemntList:
                     "units": self.appointment_info.get_patient_unit(),
                     "total_fee": self.appointment_info.get_patient_total_fee(),
                 }
-                self.connection.insert_to_appointments_collection(self.appointment)
+                print(self.appointment,"\n\n")
+                #self.connection.insert_to_appointments_collection(self.appointment)
         except ValueError:
             logging.error("get_appointment_list Method      Value Error")
             print("Error from get_appointment_list method", ValueError)
