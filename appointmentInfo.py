@@ -1,3 +1,5 @@
+import datetime
+
 from bson import Decimal128
 
 """
@@ -105,3 +107,14 @@ class AppointmentInfo:
 
     def get_modifiers_mod4(self):
         return self.appointment_info.get("Modifier4")
+
+
+    def get_current_status(self):
+        current_status = {
+            "status": "new",
+            "date": {
+                "date": datetime.datetime.now().date().strftime("%Y%m%d"),
+                "time": datetime.datetime.now().time().strftime("%H:%M:%S")
+            }
+        }
+        return current_status
