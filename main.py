@@ -31,6 +31,7 @@ if __name__ == '__main__':
     Path("request").mkdir(parents=True, exist_ok=True)
     Path("completed").mkdir(parents=True, exist_ok=True)
     try:
+        print("Start Working ...")
         request_files = get_request_files()
         for file in request_files:
             logging.info("Main Method:          Open DR_AfrozaAhmed excel sheet to read patients data")

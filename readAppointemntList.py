@@ -1,4 +1,5 @@
 import datetime
+import json
 import logging
 
 import numpy as np
@@ -41,10 +42,7 @@ class ReadAppointemntList:
 
     def __init__(self, appointment_list_file):
         self.appointment_list_file = appointment_list_file
-        self.appointment_list_file_dataframe = pd.read_excel(self.appointment_list_file,
-                                                             sheet_name='Appointments_03.29_to_04.03').replace(np.nan, '', regex=True)
-
-        # self.appointment_list_file_dataframe = pd.read_excel(self.appointment_list_file).replace(np.nan, '', regex=True)
+        self.appointment_list_file_dataframe = pd.read_excel(self.appointment_list_file).replace(np.nan, '', regex=True)
         self.appointment_info = None
         self.appointment = None
         self.date = datetime.datetime.now().date().strftime("%Y%m%d")
@@ -99,8 +97,7 @@ class ReadAppointemntList:
                     "units": self.appointment_info.get_patient_unit(),
                     "total_fee": self.appointment_info.get_patient_total_fee(),
                 }
-                print(self.appointment,"\n\n")
-                #self.connection.insert_to_appointments_collection(self.appointment)
+                self.connection.insert_to_appointments_collection(self.appointment)
         except ValueError:
             logging.error("get_appointment_list Method      Value Error")
             print("Error from get_appointment_list method", ValueError)

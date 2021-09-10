@@ -24,9 +24,10 @@ class AppointmentInfo:
     get the clinician name
     get the date and time for the appointment
     """
+
     def __init__(self, appointment_info):
         self.appointment_info = appointment_info
-        self.patient_name = self.appointment_info.get("Client")
+        self.patient_name = self.appointment_info.get("Patient")
         self.patient_full_name = self.patient_name.split()
         self.middle_name = ""
         self.clinician_full_name = self.appointment_info.get("Clinician").split(" ")
@@ -97,17 +98,16 @@ class AppointmentInfo:
         return "0" + str(self.appointment_info.get("POS"))
 
     def get_modifiers_mod1(self):
-        return str(self.appointment_info.get("Modifier1"))
+        return str(self.appointment_info.get("Mod1"))
 
     def get_modifiers_mod2(self):
-        return self.appointment_info.get("Modifier2")
+        return self.appointment_info.get("Mod2")
 
     def get_modifiers_mod3(self):
-        return self.appointment_info.get("Modifier3")
+        return self.appointment_info.get("Mod3")
 
     def get_modifiers_mod4(self):
-        return self.appointment_info.get("Modifier4")
-
+        return self.appointment_info.get("Mod4")
 
     def get_current_status(self):
         current_status = {
